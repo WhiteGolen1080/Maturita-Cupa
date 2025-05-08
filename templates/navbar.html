@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="../static/style.css">
+
+<div class="nav">
+    <h1 class=><a href="{{ url_for('index') }}" class="title">Profiler</a></h1>
+    {% if "user" in session %}
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    {% else %}
+    <a href="{{ url_for('login') }}" class="btne">Login</a>
+    {% endif %}
+</div>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiler - Register</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bg">
+    <div class="nav">
+        <h1><a href="{{ url_for('register') }}" class="title-login">Profiler</a></h1>
+    </div>
+
+    <div class="main_div">
+        <form action="" method="post">
+            <div>
+                <input type="text" name="username" required>
+                <label for="">Username</label>
+            </div>
+            <div class="inputbox"> <!-- email pole -->
+                <input type="email" name="email" required>
+                <label for="" class="NameLabel">Email</label>
+            </div>
+            <div>
+                <input type="password" name="password" required>
+                <label for="">Password</label>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
