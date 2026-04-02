@@ -52,8 +52,8 @@ def insert_post(id, user, content):
 
 def insert_user(id, username, display, email, password):
     sql = """
-    INSERT INTO MATURITA_CUPA_USERS (id, username, display, email, password)
-    VALUES (%s, %s, %s, %s, %s)
+    INSERT INTO MATURITA_CUPA_USERS (id, username, display, email, password, following)
+    VALUES (%s, %s, %s, %s, %s, "")
     """
 
     data = (id, username, display, email, password)

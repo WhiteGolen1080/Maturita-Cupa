@@ -98,6 +98,11 @@ def index_following():
         post['backgroundc'] = user_background_colors.get(post['user'], "1E1E1E")
         post['borderc'] = user_border_colors.get(post['user'], "0F0F0F")
 
+    for u in users:
+        if u["username"] == username:
+            if u["following"] == None:
+                return render_template("index.html", posts=posts, username=username, role=role, users=users)
+
     return render_template("index_following.html", posts=posts, username=username, role=role, users=users)
 
 @app.route('/send-post', methods=["POST"])
