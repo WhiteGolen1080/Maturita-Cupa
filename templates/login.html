@@ -11,22 +11,31 @@
     </div>
     
     <div class="main_div">
-        <form action="" method="post">
-            <div>
-                <input type="text" name="username" required>
-                <label for="">Username</label>
-            </div>
-            <div>
-                <input type="password" name="password" required>
-                <label for="">Password</label>
-            </div>
-            {% if error %}
-                <h5 id="loginInputError">{{error}}</h5>
-            {% endif %}
-            <input type="submit" value="Login">
-        </form>
-
-        <p>Dont have an account?</p><a href="/register">Register</a>
+        <div class="login_holder">
+            <form action="" method="post">
+                    <label for="username" class="login-labels">Username</label>
+                    <br>
+                    <input type="text" name="username" required class="login-centered">
+                <br>
+                <br>
+                    <label for="password" class="login-labels">Password</label>
+                    <br>
+                    <input type="password" name="password" required class="login-centered">
+                <br>
+                <br>
+                {% if error %}
+                    <h5 id="loginInputError" class="login-centered">{{error}}</h5>
+                {% endif %}
+                <br>
+                <input type="submit" value="Login" class="login-centered">
+            </form>
+            <br>
+            <br>
+            <p class="login-centered">Dont have an account?</p>
+            <br>
+            <br>
+            <a href="/register" class="login-centered">Register</a>
+        </div>
     </div>
 </body>
 </html>

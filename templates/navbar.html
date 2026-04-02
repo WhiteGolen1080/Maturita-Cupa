@@ -2,8 +2,10 @@
 
 <div class="nav">
     <h1 class=><a href="{{ url_for('index') }}" class="title">Profiler</a></h1>
+    <a href="{{ url_for('index') }}" class="btn">Home</a>
+    <a href="{{ url_for('search') }}" class="btn">Search</a>
     {% if "user" in session %}
-    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    <a href="{{ url_for('profile') }}" class="btne">Profile</a>
     {% else %}
     <a href="{{ url_for('login') }}" class="btne">Login</a>
     {% endif %}

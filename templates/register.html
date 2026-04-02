@@ -11,21 +11,26 @@
     </div>
 
     <div class="main_div">
-        <form action="" method="post">
-            <div>
-                <input type="text" name="username" required>
-                <label for="">Username</label>
-            </div>
-            <div class="inputbox"> <!-- email pole -->
-                <input type="email" name="email" required>
-                <label for="" class="NameLabel">Email</label>
-            </div>
-            <div>
-                <input type="password" name="password" required>
-                <label for="">Password</label>
-            </div>
-            <input type="submit" value="Register">
-        </form>
+        <div class="login_holder">
+            <form action="" method="post">
+                    <label for="" class="login-labels">Username</label>
+                <br>
+                    <input type="text" name="username" required class="login-centered">
+                <br>
+                <br>
+                <label for="" class="login-labels">Email</label>
+                <br>
+                    <input type="email" name="email" required class="login-centered">
+                <br>
+                <br>
+                    <label for="" class="login-labels">Password</label>
+                <br>
+                    <input type="password" name="password" required class="login-centered">
+                <br>
+                <br>
+                <input type="submit" value="Register" class="login-centered">
+            </form>
+        </div>
     </div>
 </body>
 </html>

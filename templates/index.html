@@ -8,8 +8,36 @@
 <body class="bg">
     {% include "navbar.html" %}
 
-    <div class="main_div">
-        <h1>Hello World!</h1>
+    <div class="nav-2">
+        <a href="{{ url_for('index') }}" class="btn">Recent</a>
+        <a href="{{ url_for('index_following') }}" class="btn">Following</a>
+    </div>
+
+    <div class="BigBoi">
+
+        <div class="PostZone">
+            {% for post in posts | reverse %}
+            <div class="postarea" style="background-color: #{{ post.backgroundc }};border-color: #{{ post.borderc }};">
+                {% for user in users %}
+                {% if user["username"] == post["user"] %}
+                <h4 class="PostText" style="color: #{{ post.textc }};">{{ user.display }}</h4>
+                {% endif %}
+                {% endfor %}
+                <h5 class="PostText" style="color: #{{ post.textc }};">{{ post.content[:255] }}</h5>
+                <br>
+                <div class="post-tail" style="background-color: #{{ post.borderc }};">
+                    <h4 class="PostText" style="color: #{{ post.backgroundc }};">{{ post.likes }} <a href="like_post/{{ post['id'] }}" class="chatUser" style="color: #{{ post.backgroundc }};">❤</a></h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if username is not none %}
+        <form action="{{ url_for('send_post') }}" method="POST" class="postSender" enctype="multipart/form-data">
+            <input type="text" name="post_content" id="post_content" class="postInput" autocomplete="off" required>
+            <input type="submit" value="Send" class="postButton">
+        </form>
+        {% endif %}
     </div>
 
 </body>

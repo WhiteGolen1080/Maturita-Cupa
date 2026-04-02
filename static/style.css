@@ -9,8 +9,8 @@
     height: 100vh;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: rgb(20, 20, 20); /* Pro prohlížeče co nepodporují gradient */
-    background-image: linear-gradient(rgb(127, 0, 255),rgb(20, 20, 20));
+    background: #303030;
+    background: radial-gradient(circle, rgba(48, 48, 48, 1) 0%, rgba(15, 15, 15, 1) 100%);
 }
 
 .main_div {
@@ -21,6 +21,19 @@
 }
 
 /*Navbar*/
+
+.nav-2 {
+    position: fixed;
+    margin-top: 40px;
+    left: 0;
+    width: 98%;
+    background-color: rgb(15, 15, 15);
+    font-size: 15px;
+    padding: 15px;
+    text-align: center;
+    height: 15px;
+    z-index: 2;
+}
 
 .nav {
     position: fixed;
@@ -44,6 +57,19 @@
     transform: translateY(-5px);
 }
 
+.btn {
+    text-decoration: none;
+    color: azure;
+    padding-right: 3vw;
+    line-height: 150%;
+}
+.btn:visited {
+    color: azure;
+}
+.btn:hover {
+    font-weight: bold;
+}
+
 .btne {
     text-decoration: none;
     color: rgb(0, 127, 150);
@@ -60,7 +86,7 @@
 
 .logout-btn{
     position: relative;
-    color: orange;
+    color: red;
     float: right;
     line-height: 150%;
     font-family: 'Dela Gothic One';
@@ -69,7 +95,52 @@
 
 .logout-btn:hover{
     font-weight: bolder;
-    transform: translateY(-5px);
+    transition: 100ms;
+}
+
+.follow-btn{
+    position: relative;
+    color: azure;
+    float: right;
+    line-height: 150%;
+    font-family: 'Dela Gothic One';
+    background: #00aacc;
+    background: linear-gradient(135deg, rgba(0, 170, 204, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    padding: 5px;
+
+}
+
+.follow-btn:hover{
+    font-weight: bolder;
+    background: #00aacc;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 1) 0%, rgba(0, 170, 204, 1) 100%);
+    transition: 100ms;
+}
+
+.following-btn{
+    position: relative;
+    color: azure;
+    float: right;
+    line-height: 150%;
+    font-family: 'Dela Gothic One';
+    background: #505050;
+    background: linear-gradient(135deg, rgba(80, 80, 80, 1) 0%, rgba(112, 112, 112, 1) 100%);
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    padding: 5px;
+
+}
+
+.following-btn:hover{
+    font-weight: bolder;
+    background: #505050;
+    background: linear-gradient(135deg, rgba(112, 112, 112, 1) 0%, rgba(80, 80, 80, 1) 100%);
     transition: 100ms;
 }
 
@@ -82,4 +153,406 @@
     line-height: 80%;
     font-family: 'dela gothic one';
     transform: translateY(-5px);
+}
+
+.login-labels {
+    position: absolute;
+    color: azure;
+    text-decoration: none;
+    line-height: 80%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.login_holder {
+    background-color:rgb(30, 30, 30);
+    width: 19%;
+    height: 250px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: rgb(44, 44, 44);
+    padding: 5px;
+}
+
+.login-centered {
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: azure;
+    background-color:rgb(30, 30, 30);
+    padding: 5px;
+    /*border-style: solid;
+    border-width: 5px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);*/
+}
+
+/*--HOME--*/
+.ChatList {
+    text-align: left;
+    background-color: rgb(77, 77, 77);
+    color:  azure;
+    width: 30vw;
+    height: 40vw;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: rgb(15, 15, 15);
+    float: none;
+    margin-top: 40px;
+    z-index: 2;
+    position: fixed;
+    right: 0;
+}
+
+.chats {
+    background-color: rgb(37, 37, 37);
+    color: azure;
+    text-align: right;
+    font-family: 'dela gothic one';
+    float: none;
+}
+
+.posttitle {
+    background-color: rgb(37, 37, 37);
+    color: azure;
+    text-align: left;
+    font-family: 'dela gothic one';
+    float: none;
+}
+
+.postarea {
+    background-color:rgb(30, 30, 30);
+    /*width: 200px;*/
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: rgb(44, 44, 44);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-tail {
+    width: 110%;
+    margin-left: -5%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    margin-top: auto;
+    margin-bottom: -5%
+}
+
+.chatpostarea {
+    background-color:azure;
+    width: 300px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: lightgrey;
+    color: rgb(44, 44, 44);
+    margin-top: 20px;
+}
+
+.chatpostarea2 {
+    background-color:azure;
+    width: 300px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: lightgrey;
+    color: rgb(44, 44, 44);
+    margin-top: 20px;
+    text-align: right;
+}
+
+.LogSoc {
+    color: azure;
+    float: none;
+    text-decoration: none;
+    padding: 0,1vw;
+    font-weight: bold;
+    font-size: large;
+    margin-left: 1vw;
+}
+
+.LogSoc:visited {
+    color: azure;
+    float: none;
+    text-decoration: none;
+    padding: 0,1vw;
+    font-weight: bold;
+    font-size: large;
+}
+
+.chatUser:visited {
+    color: azure;
+    float: none;
+    font-weight: bold;
+}
+
+.chatUser {
+    color: azure;
+    float: none;
+    font-weight: bold;
+}
+
+.LogSoc:hover {
+    color: rgb(121, 255, 255);
+    float: none;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0,1vw;
+    transition: 300ms;
+    font-size: large;
+    background-color: dimgray;
+}
+
+.Posts {
+    text-align: left;
+    background-color: rgb(77, 77, 77);
+    color:  azure;
+    width: 30vw;
+    height: 40vw;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: rgb(15, 15, 15);
+    float: none;
+    margin-top: 40px;
+    position: fixed;
+    z-index: 2;
+}
+
+.postSender {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(15, 15, 15);
+    width: 300px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+}
+
+.postInput {
+    background-color:rgb(30, 30, 30);
+    width: 240px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+}
+
+.postButton {
+    background-color:rgb(30, 30, 30);
+    width: 50px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+    right: 0;
+}
+
+.BigBoi{
+    margin-top: 1vh;
+}
+
+.BigBoiChat{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 80px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.LoginChat {
+    float: none;
+    padding-left: 1vw;
+}
+
+.PostText {
+    color: azure;
+    margin-left: 5px;
+    float: none;
+}
+
+.PostText2 {
+    float: none;
+    text-align: right;
+}
+
+.Posts {
+    display: block;
+    float: center;
+    }
+.ChatList{
+    display: block;
+    float: right;
+    }
+
+.PostZone
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    max-height: 80%;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 11.8%);
+    gap: 10px;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 1);
+}
+
+.PostZoneForProfile
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    max-height: 780px;
+    overflow-y: auto;
+}
+
+.PostAttachment{
+    max-width: 350vw;
+    max-height: 350vh;
+}
+
+.chatDiv{
+    margin-left: 1vw;
+    background-color:rgb(37, 37, 37);
+    width: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(15, 15, 15);
+}
+
+.chatMSG{
+    color: gray;
+}
+
+.chatSender {
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    margin-right: 0vw;
+    background-color:azure;
+    width: 300px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: gainsboro;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+}
+
+/*-----PROFILE-----*/
+.profile_holder {
+    background-color:rgb(30, 30, 30);
+    width: 75%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 100px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: rgb(44, 44, 44);
+    padding: 5px;
+}
+
+.tagSender {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(15, 15, 15);
+    width: 90%;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+}
+
+.tagInput {
+    background-color:rgb(30, 30, 30);
+    width: 99%;
+    height: 50px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+}
+
+.tagButton {
+    background-color:rgb(30, 30, 30);
+    width: 100px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+    right: 0;
+}
+
+/*-----SEARCH-----*/
+.searchBar {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(15, 15, 15);
+    width: 95%;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-color: black;
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+}
+
+.searchInput {
+    background-color:rgb(30, 30, 30);
+    width: 95%;
+    height: 30px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+}
+
+.searchButton {
+    background-color:rgb(30, 30, 30);
+    width: 80px;
+    height: 30px;
+    border-style: solid;
+    border-width: 0,1vw;
+    border-radius: 10px 10px 10px 10px;
+    border-color: rgb(15, 15, 15);
+    color: azure;
+    right: 0;
+}
+
+.UserZone
+{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 80%; /*780px*/
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 11.8%);
+    gap: 10px;
 }

@@ -3,52 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <title>Profiler - Your Profile</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body class="bg">
     {% include "navbar.html" %}
 
     <div class="main_div">
         {% for user in users %}
-        {% if user["username"] == username %}
+        {% if user["username"] == looking_at %}
         <div class="profile_holder" style="background-color: #{{ user.backgroundc }};border-color: #{{ user.borderc }};">
             <h1 style="color: #{{ user.textc }};">{{ user["display"] }}</h1>
             <p style="color: #{{ user.textc }};">Followers: {{ user["followers"] }}</p>
+            {% if user["username"] != username %}
+            {% for me in users %}
+            {% if me["username"] == username %}
+            {% if user["username"] in me["following"] %}
+            <a href="../../unfollow_person/{{ user['username'] }}" class="following-btn">Following</a>
+            {% else %}
+            <a href="../../follow_person/{{ user['username'] }}" class="follow-btn">Follow</a>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
             <br>
             <h3 style="color: #{{ user.textc }};">Bio:</h3>
             <p style="color: #{{ user.textc }};">{{ user["tags"] }}</p>
             <br>
-            <form action="{{ url_for('set_tags') }}" method="POST" class="tagSender" enctype="multipart/form-data">
-                <input type="text" name="tags" id="tags" class="tagInput" autocomplete="off" value="{{ user.tags }}">
-                <input type="submit" value="Set Bio" class="tagButton">
-            </form>
-            <br>
             <h3 style="color: #{{ user.textc }};">Colors:</h3>
-            <form action="{{ url_for('set_textc') }}" method="POST" enctype="multipart/form-data">
-                <input type="color" name="text_color" id="text_color" class="postInput" autocomplete="off" value="#{{ user.textc }}">
-                <input type="submit" value="Set Text Color" class="postButton" style="width: 150px;">
+            <form action="../../copy_textc/{{ user['username'] }}" method="POST" enctype="multipart/form-data">
+                <input type="submit" value="Copy Text Color" class="postButton" style="width: 150px;">
             </form>
-            <form action="{{ url_for('set_bgc') }}" method="POST" enctype="multipart/form-data">
-                <input type="color" name="background_color" id="background_color" class="postInput" autocomplete="off" value="#{{ user.backgroundc }}">
+            <form action="../../copy_bgc/{{ user['username'] }}" method="POST" enctype="multipart/form-data">
                 <input type="submit" value="Set Background Color" class="postButton" style="width: 150px;">
             </form>
-            <form action="{{ url_for('set_borderc') }}" method="POST" enctype="multipart/form-data">
-                <input type="color" name="border_color" id="border_color" class="postInput" autocomplete="off" value="#{{ user.borderc }}">
+            <form action="../../copy_borderc/{{ user['username'] }}" method="POST" enctype="multipart/form-data">
                 <input type="submit" value="Set Border Color" class="postButton" style="width: 150px;">
             </form>
-            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
-            <br>
         </div>
         {% endif %}
         {% endfor %}
         <br>
         <div class="PostZoneForProfile">
             {% for post in posts | reverse %}
-            {% if username == post["user"] %}
+            {% if looking_at == post["user"] %}
             <br>
             <div class="postarea" style="background-color: #{{ post.backgroundc }};border-color: #{{ post.borderc }};">
                 {% for user in users %}
-                {% if user["username"] == username %}
+                {% if user["username"] == looking_at %}
                 <h4 class="PostText" style="color: #{{ post.textc }};">{{ user.display }}</h4>
                 {% endif %}
                 {% endfor %}

@@ -1,9 +1,75 @@
 [
   {
+    "username": "Toney",
+    "display-name": "Toney",
+    "email": "toney@gmail.com",
+    "password": "Toney2025",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
     "username": "admin",
     "display-name": "admin",
     "email": "whitegolem1080@gmail.com",
     "password": "admin",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
+    "username": "admin",
+    "display-name": "admin",
+    "email": "whitegolem1080@gmail.com",
+    "password": "admin",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
+    "username": "Toney",
+    "display-name": "Toney",
+    "email": "toney@gmail.com",
+    "password": "Toney2025",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
+    "username": "login0012",
+    "display-name": "login0012",
+    "email": "goober2@gmail.com",
+    "password": "zDFG_56",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
+    "username": "WhiteGolem1080",
+    "display-name": "WhiteGolem1080",
+    "email": "whitegolem1080@gmail.com",
+    "password": "yZDG7eb8",
+    "role": "user",
+    "tags": "",
+    "badges": [],
+    "followers": 0,
+    "following": 0
+  },
+  {
+    "username": "YoshikageKira",
+    "display-name": "YoshikageKira",
+    "email": "kira@gmia.com",
+    "password": "123456",
     "role": "user",
     "tags": "",
     "badges": [],

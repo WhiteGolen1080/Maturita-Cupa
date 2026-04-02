@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profiler - Search by {{ filter }}</title>
+    <link rel="stylesheet" href="../../static/style.css">
+</head>
+<body class="bg">
+    {% include "navbar.html" %}
+
+    <div class="main_div">
+        <form action="{{ url_for('set_filter') }}" method="POST" class="searchBar" enctype="multipart/form-data">
+            <input type="text" name="search_filter" id="search_filter" class="searchInput" autocomplete="off">
+            <input type="submit" value="Search" class="searchButton">
+        </form>
+        <br>
+        <div class="UserZone">
+            {% for user in users | reverse %}
+            {% if filter in user["display"] %}
+            <div class="postarea" style="background-color: #{{ user.backgroundc }};border-color: #{{ user.borderc }};">
+                <h4 class="PostText" style="color: #{{ user.textc }};"><a href="../../profile/browse/{{ user['username'] }}" class="chatUser" style="color: #{{ user.textc }};">{{ user.display }}</a></h4>
+                <h5 class="PostText" style="color: #{{ user.textc }};">{{ user.tags[:75] }}</h5>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
