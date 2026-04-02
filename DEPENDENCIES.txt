@@ -1,3 +1,7 @@
 PyQt5
 Flask
 mysql-connector
+
+Jak spustit projekt:
+Stránky samostatného projektu se spouští spuštěním souboru main.py
+Administrátorská aplikace se zapíná spuštěním souboru admin_app.py
